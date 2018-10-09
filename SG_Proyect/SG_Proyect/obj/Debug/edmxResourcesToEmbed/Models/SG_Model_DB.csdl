@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sistemas_GestionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_cliente" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="nit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion_factura" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Shopping_Cart" Relationship="Self.FK_Shopping_Cart_Cliente" FromRole="Cliente" ToRole="Shopping_Cart" />
+  </EntityType>
+  <EntityType Name="Detalle_Prodducto">
+    <Key>
+      <PropertyRef Name="id_detalle_producto" />
+    </Key>
+    <Property Name="id_detalle_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_producto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="precio_unitario" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="precio_total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Detalle_Prodducto_Productos" FromRole="Detalle_Prodducto" ToRole="Productos" />
+    <NavigationProperty Name="Shopping_Cart_Detalle" Relationship="Self.FK_Shopping_Cart_Detalle_Detalle_Prodducto" FromRole="Detalle_Prodducto" ToRole="Shopping_Cart_Detalle" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="id_estado" />
+    </Key>
+    <Property Name="id_estado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="Self.FK_Productos_Estado" FromRole="Estado" ToRole="Productos" />
+    <NavigationProperty Name="Shopping_Cart_Detalle" Relationship="Self.FK_Shopping_Cart_Detalle_Estado" FromRole="Estado" ToRole="Shopping_Cart_Detalle" />
+    <NavigationProperty Name="Shopping_Cart" Relationship="Self.FK_Shopping_Cart_Estado" FromRole="Estado" ToRole="Shopping_Cart" />
+  </EntityType>
+  <EntityType Name="Metodo_Pago">
+    <Key>
+      <PropertyRef Name="id_metodo_pago" />
+    </Key>
+    <Property Name="id_metodo_pago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Shopping_Cart" Relationship="Self.FK_Shopping_Cart_Metodo_Pago" FromRole="Metodo_Pago" ToRole="Shopping_Cart" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="id_producto" />
+    </Key>
+    <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_producto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="id_estado" Type="Int32" Nullable="false" />
+    <Property Name="stock" Type="Int32" Nullable="false" />
+    <Property Name="id_tipo_producto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detalle_Prodducto" Relationship="Self.FK_Detalle_Prodducto_Productos" FromRole="Productos" ToRole="Detalle_Prodducto" />
+    <NavigationProperty Name="Estado" Relationship="Self.FK_Productos_Estado" FromRole="Productos" ToRole="Estado" />
+    <NavigationProperty Name="Tipo_Producto" Relationship="Self.FK_Productos_Tipo_Producto" FromRole="Productos" ToRole="Tipo_Producto" />
+  </EntityType>
+  <EntityType Name="Shopping_Cart">
+    <Key>
+      <PropertyRef Name="id_shoppingcart" />
+    </Key>
+    <Property Name="id_shoppingcart" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cliente" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <Property Name="metodo_pag" Type="Int32" />
+    <Property Name="monto_total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_Shopping_Cart_Cliente" FromRole="Shopping_Cart" ToRole="Cliente" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK_Shopping_Cart_Estado" FromRole="Shopping_Cart" ToRole="Estado" />
+    <NavigationProperty Name="Metodo_Pago" Relationship="Self.FK_Shopping_Cart_Metodo_Pago" FromRole="Shopping_Cart" ToRole="Metodo_Pago" />
+    <NavigationProperty Name="Shopping_Cart_Detalle" Relationship="Self.FK_Shopping_Cart_Detalle_Shopping_Cart" FromRole="Shopping_Cart" ToRole="Shopping_Cart_Detalle" />
+  </EntityType>
+  <EntityType Name="Shopping_Cart_Detalle">
+    <Key>
+      <PropertyRef Name="id_shoppingcart_detalle" />
+    </Key>
+    <Property Name="id_shoppingcart_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_shopping_cart" Type="Int32" Nullable="false" />
+    <Property Name="id_lista_producto" Type="Int32" Nullable="false" />
+    <Property Name="id_estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detalle_Prodducto" Relationship="Self.FK_Shopping_Cart_Detalle_Detalle_Prodducto" FromRole="Shopping_Cart_Detalle" ToRole="Detalle_Prodducto" />
+    <NavigationProperty Name="Estado" Relationship="Self.FK_Shopping_Cart_Detalle_Estado" FromRole="Shopping_Cart_Detalle" ToRole="Estado" />
+    <NavigationProperty Name="Shopping_Cart" Relationship="Self.FK_Shopping_Cart_Detalle_Shopping_Cart" FromRole="Shopping_Cart_Detalle" ToRole="Shopping_Cart" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Producto">
+    <Key>
+      <PropertyRef Name="id_tipo_producto" />
+    </Key>
+    <Property Name="id_tipo_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="Self.FK_Productos_Tipo_Producto" FromRole="Tipo_Producto" ToRole="Productos" />
+  </EntityType>
+  <Association Name="FK_Shopping_Cart_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Shopping_Cart" Type="Self.Shopping_Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Shopping_Cart">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Prodducto_Productos">
+    <End Role="Productos" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Detalle_Prodducto" Type="Self.Detalle_Prodducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="id_producto" />
+      </Principal>
+      <Dependent Role="Detalle_Prodducto">
+        <PropertyRef Name="id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shopping_Cart_Detalle_Detalle_Prodducto">
+    <End Role="Detalle_Prodducto" Type="Self.Detalle_Prodducto" Multiplicity="1" />
+    <End Role="Shopping_Cart_Detalle" Type="Self.Shopping_Cart_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Detalle_Prodducto">
+        <PropertyRef Name="id_detalle_producto" />
+      </Principal>
+      <Dependent Role="Shopping_Cart_Detalle">
+        <PropertyRef Name="id_lista_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Productos" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="id_estado" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="id_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shopping_Cart_Detalle_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Shopping_Cart_Detalle" Type="Self.Shopping_Cart_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="id_estado" />
+      </Principal>
+      <Dependent Role="Shopping_Cart_Detalle">
+        <PropertyRef Name="id_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shopping_Cart_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Shopping_Cart" Type="Self.Shopping_Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="id_estado" />
+      </Principal>
+      <Dependent Role="Shopping_Cart">
+        <PropertyRef Name="estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shopping_Cart_Metodo_Pago">
+    <End Role="Metodo_Pago" Type="Self.Metodo_Pago" Multiplicity="0..1" />
+    <End Role="Shopping_Cart" Type="Self.Shopping_Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Metodo_Pago">
+        <PropertyRef Name="id_metodo_pago" />
+      </Principal>
+      <Dependent Role="Shopping_Cart">
+        <PropertyRef Name="metodo_pag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Tipo_Producto">
+    <End Role="Tipo_Producto" Type="Self.Tipo_Producto" Multiplicity="1" />
+    <End Role="Productos" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Producto">
+        <PropertyRef Name="id_tipo_producto" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="id_tipo_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shopping_Cart_Detalle_Shopping_Cart">
+    <End Role="Shopping_Cart" Type="Self.Shopping_Cart" Multiplicity="1" />
+    <End Role="Shopping_Cart_Detalle" Type="Self.Shopping_Cart_Detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shopping_Cart">
+        <PropertyRef Name="id_shoppingcart" />
+      </Principal>
+      <Dependent Role="Shopping_Cart_Detalle">
+        <PropertyRef Name="id_shopping_cart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Sistemas_GestionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Detalle_Prodducto" EntityType="Self.Detalle_Prodducto" />
+    <EntitySet Name="Estadoes" EntityType="Self.Estado" />
+    <EntitySet Name="Metodo_Pago" EntityType="Self.Metodo_Pago" />
+    <EntitySet Name="Productos" EntityType="Self.Producto" />
+    <EntitySet Name="Shopping_Cart" EntityType="Self.Shopping_Cart" />
+    <EntitySet Name="Shopping_Cart_Detalle" EntityType="Self.Shopping_Cart_Detalle" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tipo_Producto" EntityType="Self.Tipo_Producto" />
+    <AssociationSet Name="FK_Shopping_Cart_Cliente" Association="Self.FK_Shopping_Cart_Cliente">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Shopping_Cart" EntitySet="Shopping_Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Prodducto_Productos" Association="Self.FK_Detalle_Prodducto_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Detalle_Prodducto" EntitySet="Detalle_Prodducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shopping_Cart_Detalle_Detalle_Prodducto" Association="Self.FK_Shopping_Cart_Detalle_Detalle_Prodducto">
+      <End Role="Detalle_Prodducto" EntitySet="Detalle_Prodducto" />
+      <End Role="Shopping_Cart_Detalle" EntitySet="Shopping_Cart_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Estado" Association="Self.FK_Productos_Estado">
+      <End Role="Estado" EntitySet="Estadoes" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shopping_Cart_Detalle_Estado" Association="Self.FK_Shopping_Cart_Detalle_Estado">
+      <End Role="Estado" EntitySet="Estadoes" />
+      <End Role="Shopping_Cart_Detalle" EntitySet="Shopping_Cart_Detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shopping_Cart_Estado" Association="Self.FK_Shopping_Cart_Estado">
+      <End Role="Estado" EntitySet="Estadoes" />
+      <End Role="Shopping_Cart" EntitySet="Shopping_Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shopping_Cart_Metodo_Pago" Association="Self.FK_Shopping_Cart_Metodo_Pago">
+      <End Role="Metodo_Pago" EntitySet="Metodo_Pago" />
+      <End Role="Shopping_Cart" EntitySet="Shopping_Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Tipo_Producto" Association="Self.FK_Productos_Tipo_Producto">
+      <End Role="Tipo_Producto" EntitySet="Tipo_Producto" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shopping_Cart_Detalle_Shopping_Cart" Association="Self.FK_Shopping_Cart_Detalle_Shopping_Cart">
+      <End Role="Shopping_Cart" EntitySet="Shopping_Cart" />
+      <End Role="Shopping_Cart_Detalle" EntitySet="Shopping_Cart_Detalle" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

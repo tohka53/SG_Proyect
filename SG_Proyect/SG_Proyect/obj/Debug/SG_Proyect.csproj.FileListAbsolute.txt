@@ -49,6 +49,8 @@ C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proye
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\roslyn\VBCSCompiler.exe
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\Antlr3.Runtime.dll
+C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\EntityFramework.dll
+C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\EntityFramework.SqlServer.dll
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -69,6 +71,8 @@ C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proye
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\System.Web.WebPages.dll
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\System.Web.WebPages.Razor.dll
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\WebGrease.dll
+C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\EntityFramework.xml
+C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\EntityFramework.SqlServer.xml
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\System.Web.Helpers.xml
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\System.Web.Mvc.xml
 C:\Users\Admin\Desktop\Mio\2018\sistemas de gestion\Proyecto\SG_Proyect\SG_Proyect\SG_Proyect\bin\System.Web.Optimization.xml

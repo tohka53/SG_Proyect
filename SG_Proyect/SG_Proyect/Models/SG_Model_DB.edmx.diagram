@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0fdbf2ffb4b64b41a661869277cf38f6" Name="Diagram1">
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Cliente" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Detalle_Prodducto" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Estado" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Metodo_Pago" Width="1.5" PointX="3.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Producto" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Shopping_Cart" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Shopping_Cart_Detalle" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sistemas_GestionModel.Tipo_Producto" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Shopping_Cart_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Detalle_Prodducto_Productos" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Shopping_Cart_Detalle_Detalle_Prodducto" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Productos_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Shopping_Cart_Detalle_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Shopping_Cart_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Shopping_Cart_Metodo_Pago" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Productos_Tipo_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Sistemas_GestionModel.FK_Shopping_Cart_Detalle_Shopping_Cart" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
