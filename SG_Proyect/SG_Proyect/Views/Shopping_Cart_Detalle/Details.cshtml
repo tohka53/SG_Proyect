@@ -1,0 +1,42 @@
+﻿@model SG_Proyect.Models.Shopping_Cart_Detalle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shopping_Cart_Detalle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Detalle_Prodducto.id_detalle_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detalle_Prodducto.id_detalle_producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shopping_Cart.id_shoppingcart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shopping_Cart.id_shoppingcart)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_shoppingcart_detalle }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

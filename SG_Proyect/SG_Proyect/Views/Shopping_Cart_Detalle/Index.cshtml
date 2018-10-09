@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SG_Proyect.Models.Shopping_Cart_Detalle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalle_Prodducto.id_detalle_producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shopping_Cart.id_shoppingcart)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalle_Prodducto.id_detalle_producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shopping_Cart.id_shoppingcart)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_shoppingcart_detalle }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_shoppingcart_detalle }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_shoppingcart_detalle })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model SG_Proyect.Models.Detalle_Prodducto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Detalle_Prodducto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio_unitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio_unitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio_total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio_total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.nombre_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.nombre_producto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_detalle_producto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

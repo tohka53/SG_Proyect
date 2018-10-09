@@ -155,7 +155,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\Detalle_ProdductoController.cs" />
+    <Compile Include="Controllers\EstadoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Metodo_PagoController.cs" />
+    <Compile Include="Controllers\ProductoesController.cs" />
+    <Compile Include="Controllers\Shopping_CartController.cs" />
+    <Compile Include="Controllers\Shopping_Cart_DetalleController.cs" />
+    <Compile Include="Controllers\Tipo_ProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,6 +267,46 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Detalle_Prodducto\Create.cshtml" />
+    <Content Include="Views\Detalle_Prodducto\Delete.cshtml" />
+    <Content Include="Views\Detalle_Prodducto\Details.cshtml" />
+    <Content Include="Views\Detalle_Prodducto\Edit.cshtml" />
+    <Content Include="Views\Detalle_Prodducto\Index.cshtml" />
+    <Content Include="Views\Estadoes\Create.cshtml" />
+    <Content Include="Views\Estadoes\Delete.cshtml" />
+    <Content Include="Views\Estadoes\Details.cshtml" />
+    <Content Include="Views\Estadoes\Edit.cshtml" />
+    <Content Include="Views\Estadoes\Index.cshtml" />
+    <Content Include="Views\Metodo_Pago\Create.cshtml" />
+    <Content Include="Views\Metodo_Pago\Delete.cshtml" />
+    <Content Include="Views\Metodo_Pago\Details.cshtml" />
+    <Content Include="Views\Metodo_Pago\Edit.cshtml" />
+    <Content Include="Views\Metodo_Pago\Index.cshtml" />
+    <Content Include="Views\Productoes\Create.cshtml" />
+    <Content Include="Views\Productoes\Delete.cshtml" />
+    <Content Include="Views\Productoes\Details.cshtml" />
+    <Content Include="Views\Productoes\Edit.cshtml" />
+    <Content Include="Views\Productoes\Index.cshtml" />
+    <Content Include="Views\Shopping_Cart\Create.cshtml" />
+    <Content Include="Views\Shopping_Cart\Delete.cshtml" />
+    <Content Include="Views\Shopping_Cart\Details.cshtml" />
+    <Content Include="Views\Shopping_Cart\Edit.cshtml" />
+    <Content Include="Views\Shopping_Cart\Index.cshtml" />
+    <Content Include="Views\Shopping_Cart_Detalle\Create.cshtml" />
+    <Content Include="Views\Shopping_Cart_Detalle\Delete.cshtml" />
+    <Content Include="Views\Shopping_Cart_Detalle\Details.cshtml" />
+    <Content Include="Views\Shopping_Cart_Detalle\Edit.cshtml" />
+    <Content Include="Views\Shopping_Cart_Detalle\Index.cshtml" />
+    <Content Include="Views\Tipo_Producto\Create.cshtml" />
+    <Content Include="Views\Tipo_Producto\Delete.cshtml" />
+    <Content Include="Views\Tipo_Producto\Details.cshtml" />
+    <Content Include="Views\Tipo_Producto\Edit.cshtml" />
+    <Content Include="Views\Tipo_Producto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

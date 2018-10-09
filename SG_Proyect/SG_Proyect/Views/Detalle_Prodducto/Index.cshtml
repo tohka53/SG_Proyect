@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SG_Proyect.Models.Detalle_Prodducto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_unitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.nombre_producto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_unitario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.nombre_producto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_detalle_producto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_detalle_producto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_detalle_producto })
+        </td>
+    </tr>
+}
+
+</table>
