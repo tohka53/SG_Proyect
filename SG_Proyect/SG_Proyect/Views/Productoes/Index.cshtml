@@ -12,24 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nombre_producto)
+            Nombre Producto 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.descripcion)
+           Descripcion
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.precio)
+          Precio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.stock)
+            Cantidad Disponible
         </th>
+      
         <th>
-            @Html.DisplayNameFor(model => model.Estado.descripcion)
+            Tipo del producto
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_Producto.descripcion)
-        </th>
-        <th></th>
+        <th>Acciones</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -46,9 +44,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.stock)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado.descripcion)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.Tipo_Producto.descripcion)
         </td>
